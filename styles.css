@@ -1,0 +1,357 @@
+/* Общий стиль для тела страницы */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f5f5f5;
+    overflow: hidden; /* Запрещаем прокрутку */
+    touch-action: pan-y; /* Запрещаем масштабирование и перемещение на мобильных устройствах */
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #f5f5f5;
+    margin: 0;
+}
+
+/* Синие слова */
+.text-content span.blue,
+#youtube h2 span.blue,
+#lectures h2 span.blue {
+    color: #1e90ff;
+}
+
+/* Шапка сайта */
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden; /* Обрезаем содержимое, выходящее за границы */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Ограничение максимальной ширины шапки */
+    margin: 0 auto; /* Центрируем блок */
+}
+
+.header-photo {
+    width: 40vw; /* Уменьшаем ширину фотографии */
+    max-width: 600px; /* Устанавливаем максимальную ширину фотографии */
+    height: auto; /* Высота автоматически изменяется в зависимости от ширины */
+    object-fit: contain; /* Не обрезаем изображение, чтобы оно поместилось полностью */
+    object-position: center;
+    box-sizing: border-box;
+}
+
+.text-content {
+    flex: 1;
+    text-align: center;
+    color: #f5f5f5;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.separator {
+    width: 100%;
+    border: 1px solid #1e90ff;
+    margin: -10px auto;
+}
+
+.subtext {
+    font-family: 'Playfair Display', serif;
+    color: #f5f5f5;
+    font-size: 1.8em;
+}
+
+/* Выделение ключевых слов синим цветом */
+.text-content h1 span, 
+.text-content .subtext span, 
+#youtube h2 span, 
+#lectures h2 span {
+    color: #1e90ff;
+}
+
+/* Секция с видео */
+#youtube {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #121212;
+    border-top: 3px solid #1e90ff;
+    border-bottom: 3px solid #1e90ff;
+}
+
+#youtube h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#youtube iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    border: 3px solid #1e90ff;
+    margin-top: 1.5rem;
+}
+
+#lectures h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f5f5f5;
+}
+
+/* Секция лекций */
+.lecture {
+    background: #2c2c2c;
+    border: 2px solid #1e90ff;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.lecture h3 {
+    font-size: 1.8rem;
+    color: #1e90ff;
+    margin: 0;
+    font-weight: bold;
+}
+
+.lecture img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #1e90ff;
+}
+
+.details {
+    color: #1e90ff;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lecture:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Секция с предложением */
+#offer {
+    background: #2c2c2c;
+    border-top: 3px solid #1e90ff;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#offer h2 {
+    font-size: 2.5rem;
+    color: #1e90ff;
+    margin-bottom: 1rem;
+}
+
+#offer p {
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin: 0 auto 2rem;
+}
+
+/* Стиль кнопки */
+.cta-button {
+    display: inline-block;
+    background: #1e90ff;
+    color: #1a1a1a;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #1c7ecd;
+}
+
+/* Стиль для подвала */
+footer {
+    background: #111;
+    color: #777;
+    text-align: center;
+    padding: 1rem 1rem;
+    border-top: 3px solid #1e90ff;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    color: #fff;
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+}
+
+.modal-content img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 3px solid #1e90ff;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+/* Адаптивные стили */
+
+/* Мобильные телефоны (до 600px) */
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        height: auto; /* Позволяем высоте шапки изменяться автоматически */
+        align-items: center;
+        padding: 20px 0; /* Добавляем отступы сверху и снизу */
+    }
+
+    .header-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .header-photo {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+
+    .text-content {
+        padding: 0 20px;
+        margin-bottom: 20px; /* Отступ снизу от текста к фотографии */
+        position: relative;
+        z-index: 1; /* Убедимся, что текст всегда поверх фотографии */
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem; /* Уменьшение размера заголовка для мобильных устройств */
+    }
+    
+    .separator {
+        width: 100%;
+    }
+    
+    #youtube iframe {
+        height: 300px; /* Уменьшение высоты видео */
+    }
+    
+    .lecture {
+        width: 95%; /* Увеличение ширины блока лекций для мобильных устройств */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .lecture img {
+        width: 100%;
+        max-width: 120px; /* Уменьшение максимальной ширины изображения */
+    }
+    
+    .details {
+        font-size: 1rem;
+        position: relative; /* Для предотвращения перекрытия */
+    }
+    
+    #offer p {
+        font-size: 1.2rem;
+        max-width: 100%;
+    }
+}
+
+/* Плашеты и устройства среднего размера (601px - 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .header-photo {
+        width: 50vw;
+        height: auto;
+        max-width: none;
+    }
+    
+    .text-content {
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .header-content {
+        max-width: 90%;
+    }
+
+    .header-content h1 {
+        font-size: 3rem;
+    }
+
+    #youtube iframe {
+        height: 400px;
+    }
+    
+    .lecture {
+        width: 90%;
+    }
+}
